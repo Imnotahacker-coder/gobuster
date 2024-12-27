@@ -1,0 +1,16 @@
+import tkinter as tk
+from tkinter import messagebox
+import random
+
+def create_error():
+    error_window = tk.Tk()
+    error_window.withdraw()  # Oculta la ventana principal
+    messagebox.showerror("Error crítico", "Se ha producido un error desconocido.\nCódigo: 0x80070005")
+    error_window.destroy()
+
+def infinite_errors():
+    for _ in range(random.randint(3, 7)):  # Crear entre 3 y 7 errores aleatoriamente
+        create_error()
+
+if __name__ == "__main__":
+    infinite_errors()
